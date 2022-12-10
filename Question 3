@@ -1,0 +1,55 @@
+Data store to save monitoring data of service 
+
+### Each time a request hit API a thread will start which will log the incoming and outgoing request of the API and user id
+
+### Data store contain 2 classes 
+### Assuming there are 100 API, assign a unique number to each API and each user  
+### There are 2 classes in this structure
+
+Class user
+{
+    int id;
+    # SIZE of API is equal to total number of API, If the number of API increases this can be increased further
+    vector<int>API;
+    int maxi_response_time;
+    int_max_response_time_id;
+}
+
+Class API
+{
+  int id;
+  int response_time;
+  int error_count;
+}
+
+Class Data_Store
+{
+
+  #mapping api to int
+  map<string,int>api_string_to_id;
+  # storage data of users
+  vector<users>_users;
+  # storage data of API's
+  vector<API>_APIS;
+  int max_error_count;
+  int max_error_count_id;
+  int max_response_time;
+  int max_response_time_id;
+  
+  #update method
+  
+  update(int user_id,int api_id,flag error,int response_time)
+  {
+      # update the error count of API and maintain the running MAX of API
+      if(flag_error)
+        # recalculate(max_error_count)
+      
+      map[user_id][api_id]++;
+        # recalcute max for api and for each user the highest response time
+  }
+  
+  int get_max_response_api
+  {
+    return max_response_time_id;
+  }
+  
